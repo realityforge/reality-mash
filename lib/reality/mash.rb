@@ -23,7 +23,7 @@ module Reality
     end
 
     def to_h
-      basic_types = [Fixnum, Float, TrueClass, FalseClass, NilClass]
+      basic_types = [Integer, Float, TrueClass, FalseClass, NilClass]
       result = {}
       each_pair do |key, value|
         result[key] = value.is_a?(Mash) ? value.to_h : basic_types.include?(value.class) ? value : value.dup
